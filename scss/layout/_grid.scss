@@ -1,11 +1,9 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
-  background-color: rgba(70, 131, 180, 0.384);
 
   //give all col some basic styling with attribut selector
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
