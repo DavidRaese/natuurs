@@ -1,0 +1,25 @@
+.heading-primary {
+  margin-bottom: 2rem;
+  color: $white;
+  text-transform: uppercase;
+  //fix for shaking animation
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    //animation
+    animation: moveInLeft 0.8s ease-in;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.74rem;
+    //animation
+    animation: moveInRight 0.8s ease-in;
+  }
+}
