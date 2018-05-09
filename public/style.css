@@ -34,14 +34,33 @@ header {
   transform: translateX(-50%); }
   .text-box .heading-primary {
     color: #fff;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    backface-visibility: hidden; }
     .text-box .heading-primary .heading-primary-main {
       display: block;
       font-size: 60px;
       font-weight: 400;
-      letter-spacing: 35px; }
+      letter-spacing: 35px;
+      animation: moveInLeft 0.8s ease-in; }
     .text-box .heading-primary .heading-primary-sub {
       display: block;
       font-size: 20px;
       font-weight: 400;
-      letter-spacing: 17.4px; }
+      letter-spacing: 17.4px;
+      animation: moveInRight 0.8s ease-in; }
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }

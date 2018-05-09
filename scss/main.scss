@@ -56,12 +56,16 @@ header {
   .heading-primary {
     color: $white;
     text-transform: uppercase;
+    //fix for shaking animation
+    backface-visibility: hidden;
 
     .heading-primary-main {
       display: block;
       font-size: 60px;
       font-weight: 400;
       letter-spacing: 35px;
+      //animation
+      animation: moveInLeft 0.8s ease-in;
     }
 
     .heading-primary-sub {
@@ -69,6 +73,32 @@ header {
       font-size: 20px;
       font-weight: 400;
       letter-spacing: 17.4px;
+      //animation
+      animation: moveInRight 0.8s ease-in;
     }
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
