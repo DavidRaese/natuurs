@@ -2,6 +2,7 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: $shadow-medium;
+  background-color: rgba($white, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -9,20 +10,51 @@
   transform: skewX(-12deg);
 
   &__shape {
+    position: relative;
     width: 15rem;
     height: 15rem;
     float: left;
     shape-outside: circle(50% at 50% 50%); // circel(r at x y)
     clip-path: circle(50% at 50% 50%);
     // best way to change position is to translate
-    transform: translateX(-3rem) skewX(12deg);
+    transform: translateX(-3rem) skewX(12deg) translateY(-2rem);
   }
 
   &__img {
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.3s;
+    //fix
+    backface-visibility: hidden;
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    transform: skewX(12deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
+    //fix
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }
